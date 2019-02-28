@@ -1,30 +1,66 @@
-Webiik Components
-=================
-Webiik components for lean web development with minimal dependencies. Use them standalone or within Webiik Framework. 
+<p align="left">
+<img src="https://img.shields.io/packagist/l/webiik/webiik.svg"/>
+<img src="https://img.shields.io/badge/dependencies-0-brightgreen.svg"/>
+</p>
 
-Available Components
---------------------
-* [App](./src/Webiik/App/README.md)
-* [Arr](./src/Webiik/Arr/README.md)
-* [Container](./src/Webiik/Container/README.md)
-* [Cookie](./src/Webiik/Cookie/README.md)
-* [Csrf](./src/Webiik/Csrf/README.md)
-* [CurlHttpClient](./src/Webiik/CurlHttpClient/README.md)
-* [Data](./src/Webiik/Data/README.md)
-* [Error](./src/Webiik/Error/README.md)
-* [Flash](./src/Webiik/Flash/README.md)
-* [Log](./src/Webiik/Log/README.md)
-* [Login](./src/Webiik/Login/README.md)
-* [Mail](./src/Webiik/Mail/README.md)
-* [Middleware](./src/Webiik/Middleware/README.md)
-* [OAuth1Client](./src/Webiik/OAuth1Client/README.md)
-* [OAuth2Client](./src/Webiik/OAuth2Client/README.md)
-* [Router](./src/Webiik/Router/README.md)
-* [Session](./src/Webiik/Session/README.md)
-* [Token](./src/Webiik/Token/README.md)
-* [Translation](./src/Webiik/Translation/README.md)
-* [Validator](./src/Webiik/Validator/README.md)
-* [View](./src/Webiik/View/README.md)
+Data
+====
+The Data is simple, read/write-only, key-value data container.
+
+Installation
+------------
+```bash
+composer require webiik/data
+```
+
+Example
+-------
+```php
+$dataContainer = new \Webiik\Data\Data();
+$dataContainer->set('foo', 'bar');
+```
+
+Adding
+------
+### set
+```php
+set(string $key, $data): void
+```
+**set()** sets **$data** to the container under given **$key**.
+```php
+$dataContainer->set('foo', 'bar');
+```
+
+Check
+-----
+### isIn
+```php
+isIn(string $key): bool
+```
+**isIn()** determines if **$key** is set in container and if its value is not **NULL**. 
+```php
+$dataContainer->isIn('foo');
+```
+
+Getting
+-------
+### get
+```php
+get(string $key)
+```
+**get()** gets data from the container by **$key**.
+```php
+$dataContainer->get('foo');
+```
+
+### getAll
+```php
+getAll(): array
+```
+**getAll()** returns key-value array with all data stored in the container.
+```php
+$dataContainer->getAll();
+```
 
 Resources
 ---------
